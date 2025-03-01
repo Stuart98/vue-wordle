@@ -10,7 +10,7 @@ const answer = getWordOfTheDay()
 // Board state. Each tile is represented as { letter, state }
 const board = $ref(
   Array.from({ length: 6 }, () =>
-    Array.from({ length: 5 }, () => ({
+    Array.from({ length: answer.length }, () => ({
       letter: '',
       state: LetterState.INITIAL
     }))
@@ -169,6 +169,14 @@ function genResultGrid() {
     })
     .join('\n')
 }
+
+function reload() {
+    window.location.reload();
+}
+
+function reveal() {
+    showMessage(answer)
+}
 </script>
 
 <template>
@@ -179,13 +187,10 @@ function genResultGrid() {
     </div>
   </Transition>
   <header>
+    <button @click="reload">New Game</button>
     <h1>VVORDLE</h1>
-    <a
-      id="source-link"
-      href="https://github.com/yyx990803/vue-wordle"
-      target="_blank"
-      >Source</a
-    >
+    <button @click="reveal">Reveal</button>
+
   </header>
   <div id="board">
     <div
@@ -195,6 +200,9 @@ function genResultGrid() {
         shakeRowIndex === index && 'shake',
         success && currentRowIndex === index && 'jump'
       ]"
+      :style="{
+        'grid-template-columns': `repeat(${answer.length}, 1fr)`
+      }"
     >
       <div
         v-for="(tile, index) in row"
@@ -229,6 +237,26 @@ function genResultGrid() {
   height: var(--height);
   width: min(350px, calc(var(--height) / 6 * 5));
   margin: 0px auto;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    button {
+        font-family: inherit;
+        font-weight: bold;
+        border: 0;
+        padding: 10px;
+        border-radius: 4px;
+        background-color: #d3d6da;
+        color: #1a1a1b;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+    }
 }
 .message {
   position: absolute;

@@ -13,6 +13,9 @@ export function getWordOfTheDay() {
       alert(`Malformed encoded word query. ${defaultMessage}`)
     }
   }
+    
+  // pick random word from list
+  return answers.sort(() => 0.5 - Math.random())[0];
 
   const now = new Date()
   const start = new Date(2022, 0, 0)
@@ -24,8 +27,35 @@ export function getWordOfTheDay() {
   return answers[day]
 }
 
-// copied from Wordle source
 const answers = [
+    'and',
+    'can',
+    'no',
+    'the',
+    'is',
+    'on',
+    'the',
+    'is',
+    'on',
+    'up',
+    'but',
+    'get',
+    'not',
+    'yes',
+    'get',
+    'at',
+    'got',
+    'can',
+    'in',
+    'is',
+    'it',
+    'and',
+    'go',
+
+];
+
+// copied from Wordle source
+const xanswers = [
   'cigar',
   'rebut',
   'sissy',
