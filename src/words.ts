@@ -27,7 +27,7 @@ export function getWordOfTheDay() {
   return answers[day]
 }
 
-const answers = [
+const classAnswers = [
     'and',
     'can',
     'no',
@@ -53,6 +53,31 @@ const answers = [
     'go',
 
 ];
+
+// 200 most common 3 letter words - ChatGPT
+const answers = [
+    "the", "and", "for", "are", "but", "not", "you", "all", "any", "can",
+    "had", "her", "was", "one", "our", "out", "day", "get", "has", "him",
+    "his", "how", "man", "new", "now", "old", "see", "two", "way", "who",
+    "boy", "did", "its", "let", "put", "say", "she", "too", "use", "big",
+    "cat", "dog", "egg", "fan", "gym", "hat", "ink", "jam", "key", "log",
+    "map", "net", "owl", "pen", "rat", "sun", "top", "van", "win", "box",
+    "cow", "dry", "eat", "fix", "gum", "hit", "ice", "jet", "kit", "lip",
+    "mud", "nap", "oil", "pig", "row", "sip", "tap", "urn", "vet", "wet",
+    "yak", "zip", "act", "bat", "cap", "dig", "elf", "fog", "gap", "hop",
+    "ill", "jar", "kin", "lap", "mix", "nod", "opt", "pot", "run", "sit",
+    "tan", "use", "vie", "war", "yes", "zap", "art", "bud", "cop", "dip",
+    "end", "fit", "gas", "hip", "ink", "job", "kit", "lie", "man", "net",
+    "oak", "pad", "rag", "saw", "tie", "urn", "vet", "wig", "yam", "zen",
+    "ape", "bus", "cut", "dot", "elf", "fig", "gut", "hen", "ion", "jet",
+    "kid", "lot", "mud", "nut", "owl", "pop", "rub", "sky", "tip", "use",
+    "vat", "wow", "yes", "zip", "ant", "bee", "cub", "dew", "era", "fox",
+    "guy", "hat", "ice", "jam", "kit", "log", "man", "net", "odd", "pen",
+    "rat", "son", "toe", "urn", "van", "web", "yak", "zoo", "ace", "bag",
+    "cat", "dig", "eel", "fan", "god", "hen", "ink", "jar", "kid", "lip",
+    "man", "nap", "oak", "pet", "rat", "sun", "tap", "urn", "vet", "win"
+  ];
+  
 
 // copied from Wordle source
 const xanswers = [
