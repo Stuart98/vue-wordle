@@ -285,7 +285,7 @@ header {
   line-height: 2rem;
   font-weight: bold;
   vertical-align: middle;
-  text-transform: uppercase;
+  text-transform: lowercase;
   user-select: none;
   position: relative;
 }
